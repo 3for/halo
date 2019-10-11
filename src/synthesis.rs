@@ -15,7 +15,7 @@ pub trait Backend<FF: Field> {
 
     /// Set the value of a variable.
     ///
-    /// `allocation` will be Some if this multiplication gate is being used for
+    /// `annotation` will be Some if this multiplication gate is being used for
     /// variable allocation, and None if it is being used as a constraint.
     ///
     /// Might error if this backend expects to know it.
@@ -35,7 +35,7 @@ pub trait Backend<FF: Field> {
 
     /// Create a new multiplication gate.
     ///
-    /// `allocation` will be Some if this multiplication gate is being used as a
+    /// `annotation` will be Some if this multiplication gate is being used as a
     /// constraint, and None if it is being used for variable allocation.
     fn new_multiplication_gate<A, AR>(&mut self, _annotation: Option<A>)
     where
