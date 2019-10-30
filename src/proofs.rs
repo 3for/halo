@@ -239,7 +239,7 @@ impl<F: Field> Deferred<F> {
         let lhs = self.sx_cur_opening * &xinvn;
         let lhs = lhs * &yn;
 
-        // Computes x + x^2 + x^3 + ... + x^n
+        // Computes x + x^2 + x^3 + ... + x^n, n=2^k
         fn compute_thing<F: Field>(x: F, k: usize) -> F {
             let mut acc = x;
             let mut cur = x;
